@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - PackEase</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <div class="admin-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <span class="admin-brand-icon">📦</span>
+        <span class="admin-brand-title">PackEase</span>
+      </div>
+
+      <ul class="admin-nav">
+        <li class="admin-nav-item">
+          <a href="admin-dashboard.html" class="active">
+            <span>📊</span> <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="admin-nav-item">
+          <a href="admin-products.html">
+            <span>📦</span> <span>Product Inventory</span>
+          </a>
+        </li>
+        <li class="admin-nav-item">
+          <a href="admin-orders.html">
+            <span>📑</span> <span>Orders & Quotes</span>
+          </a>
+        </li>
+        <li class="admin-nav-item">
+          <a href="admin-customers.html">
+            <span>👥</span> <span>Customers & Leads</span>
+          </a>
+        </li>
+        <li class="admin-nav-item">
+          <a href="admin-settings.html">
+            <span>⚙️</span> <span>Settings & Reports</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <a href="index.html">
+          <span>🌐</span> <span>View Live Website</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="admin-main">
+      
+      <!-- Topbar -->
+      <header class="admin-header">
+        <div class="admin-header-title">
+          <h1>Dashboard Overview</h1>
+          <p>Real-time analytics, recent quote requests, and store health.</p>
+        </div>
+
+        <div class="admin-user-profile">
+          <div class="admin-avatar">AD</div>
+          <div class="admin-info">
+            <span>Admin Administrator</span>
+            <small>Super Manager</small>
+          </div>
+          <button class="btn-logout" id="adminLogoutBtn">Logout</button>
+        </div>
+      </header>
+
+      <!-- KPI Metrics Cards Grid -->
+      <section class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-icon">💰</div>
+          <div class="metric-data">
+            <h3>Total Revenue</h3>
+            <div class="value">₹14.8 Lakhs</div>
+            <span class="change">↑ +18.4% vs last month</span>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon">📑</div>
+          <div class="metric-data">
+            <h3>Total Orders</h3>
+            <div class="value">186 Orders</div>
+            <span class="change">↑ +12 new today</span>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon">⏳</div>
+          <div class="metric-data">
+            <h3>Pending Quotes</h3>
+            <div class="value">14 Quotes</div>
+            <span class="change" style="color: #d97706;">Action required</span>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon">🌱</div>
+          <div class="metric-data">
+            <h3>Eco Score</h3>
+            <div class="value">98.4%</div>
+            <span class="change">FSC Certified</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Layout Grid: Table + Quick Actions -->
+      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 30px;">
+        
+        <!-- Recent Orders Table -->
+        <div class="admin-card">
+          <div class="card-header-flex">
+            <h2>Recent Orders & Inquiries</h2>
+            <a href="admin-orders.html" class="action-btn">View All Orders →</a>
+          </div>
+
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Client Name</th>
+                  <th>Packaging Item</th>
+                  <th>Qty</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>#PK-2026-89</strong></td>
+                  <td>Aura Botanicals</td>
+                  <td>Cosmetic Folding Carton</td>
+                  <td>2,500 units</td>
+                  <td>₹1,12,500</td>
+                  <td><span class="status-pill status-shipped">Shipped</span></td>
+                </tr>
+                <tr>
+                  <td><strong>#PK-2026-90</strong></td>
+                  <td>Urban Organics</td>
+                  <td>Kraft Paper Bags</td>
+                  <td>5,000 units</td>
+                  <td>₹75,000</td>
+                  <td><span class="status-pill status-active">In Production</span></td>
+                </tr>
+                <tr>
+                  <td><strong>#PK-2026-91</strong></td>
+                  <td>Gourmet Treats</td>
+                  <td>Corrugated Mailers</td>
+                  <td>1,000 units</td>
+                  <td>₹25,000</td>
+                  <td><span class="status-pill status-pending">Pending Review</span></td>
+                </tr>
+                <tr>
+                  <td><strong>#PK-2026-92</strong></td>
+                  <td>Velvet Luxe Co.</td>
+                  <td>Luxury Rigid Gift Box</td>
+                  <td>250 units</td>
+                  <td>₹30,000</td>
+                  <td><span class="status-pill status-active">In Production</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Right Side: Quick Action & System Health -->
+        <div>
+          <div class="admin-card">
+            <h2>Quick Actions</h2>
+            <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 18px;">
+              <a href="admin-products.html" class="action-btn" style="justify-content: center; padding: 12px;">+ Add New Packaging Product</a>
+              <a href="admin-orders.html" class="action-btn" style="justify-content: center; padding: 12px;">Update Order Statuses</a>
+              <a href="admin-settings.html" class="action-btn" style="justify-content: center; padding: 12px;">Download Revenue Report PDF</a>
+            </div>
+          </div>
+
+          <div class="admin-card">
+            <h2>Production Capacity</h2>
+            <div style="margin-top: 16px;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 6px;">
+                <span>Corrugated Line 1</span>
+                <strong>82% Full</strong>
+              </div>
+              <div style="background: var(--admin-bg); height: 10px; border-radius: 6px; overflow: hidden; margin-bottom: 16px;">
+                <div style="background: var(--primary); width: 82%; height: 100%;"></div>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 6px;">
+                <span>Foil Printing Unit</span>
+                <strong>45% Full</strong>
+              </div>
+              <div style="background: var(--admin-bg); height: 10px; border-radius: 6px; overflow: hidden;">
+                <div style="background: #2ec4b6; width: 45%; height: 100%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

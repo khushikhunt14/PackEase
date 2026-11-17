@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Quote Request - PackEase</title>
+  <meta name="description" content="Get in touch with PackEase packaging experts or request a comprehensive custom quote.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+    .quote-form-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+    }
+    .info-card {
+      background: var(--primary-subtle);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+    }
+    .info-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .info-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: var(--primary);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    @media (max-width: 900px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <span>📦</span> PackEase <span class="badge">Eco-Pack</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="sustainability.html">Sustainability</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <button id="themeBtn" aria-label="Toggle Theme">🌙</button>
+      <a href="contact.html" class="btn btn-primary btn-sm">Get a Quote</a>
+      <a href="login.html" class="btn btn-secondary btn-sm">Admin Portal</a>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="section" style="background: linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-subtle) 100%); padding: 60px 5%;">
+    <div class="section-header">
+      <span class="section-subtitle">Get In Touch</span>
+      <h2>Request a Custom Quote or Talk to Us</h2>
+      <p>Have questions about box dielines, bulk discounts, or production timelines? Fill out the form below for a response within 2 business hours.</p>
+    </div>
+  </section>
+
+  <!-- Form & Info Section -->
+  <section class="section">
+    <div class="contact-container">
+      
+      <!-- Left: Interactive Quote Form -->
+      <div class="quote-form-card">
+        <h3 style="font-size: 1.6rem; color: var(--primary); margin-bottom: 24px;">Custom Packaging Request Form</h3>
+        
+        <form id="contactForm">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="form-group">
+              <label for="cName">Full Name *</label>
+              <input type="text" id="cName" placeholder="e.g. Vikram Sharma" required>
+            </div>
+            <div class="form-group">
+              <label for="cCompany">Company / Brand Name</label>
+              <input type="text" id="cCompany" placeholder="e.g. Urban Organics">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;">
+            <div class="form-group">
+              <label for="cEmail">Work Email *</label>
+              <input type="email" id="cEmail" placeholder="name@company.com" required>
+            </div>
+            <div class="form-group">
+              <label for="cPhone">Phone Number *</label>
+              <input type="tel" id="cPhone" placeholder="+91 98765 43210" required>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;">
+            <div class="form-group">
+              <label for="cType">Interested Product</label>
+              <select id="cType">
+                <option value="corrugated">Corrugated Shipping Boxes</option>
+                <option value="paperbag">Eco Kraft Paper Bags</option>
+                <option value="cosmetic">Cosmetic Folding Cartons</option>
+                <option value="rigid">Luxury Rigid Gift Boxes</option>
+                <option value="flexible">Stand-Up Barrier Pouches</option>
+                <option value="labels">Custom Roll Labels & Stickers</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="cQty">Estimated Quantity (Units)</label>
+              <input type="number" id="cQty" placeholder="e.g. 1000" min="50">
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-top: 16px;">
+            <label for="cMessage">Project Requirements & Specifications</label>
+            <textarea id="cMessage" rows="5" placeholder="Describe dimensions (L x W x H), printing finish requirements (foil stamping, spot UV), or target delivery dates..." required></textarea>
+          </div>
+
+          <div class="form-group" style="margin-top: 16px;">
+            <label for="cFile">Attach Design Artwork / Dieline (Optional PDF/AI/PNG)</label>
+            <input type="file" id="cFile" accept=".pdf,.ai,.png,.jpg,.jpeg">
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 24px;">Submit Quote Request</button>
+        </form>
+      </div>
+
+      <!-- Right: Contact Information & Location Map Mock -->
+      <div>
+        <div class="info-card" style="margin-bottom: 30px;">
+          <h3 style="color: var(--primary); font-size: 1.4rem; margin-bottom: 20px;">Contact Information</h3>
+
+          <div class="info-item">
+            <div class="info-icon">📍</div>
+            <div>
+              <strong style="display: block;">Corporate Headquarters & Factory</strong>
+              <span style="font-size: 0.9rem; color: var(--text-muted);">Plot 42, Industrial Park Phase II, MIDC, Andheri East, Mumbai, MH - 400093</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">📞</div>
+            <div>
+              <strong style="display: block;">Phone & WhatsApp Inquiries</strong>
+              <span style="font-size: 0.9rem; color: var(--text-muted);">+91 (022) 4920-8800 / +91 98200 11223</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">✉️</div>
+            <div>
+              <strong style="display: block;">Email Support</strong>
+              <span style="font-size: 0.9rem; color: var(--text-muted);">quotes@packease.com / support@packease.com</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">⏰</div>
+            <div>
+              <strong style="display: block;">Operating Hours</strong>
+              <span style="font-size: 0.9rem; color: var(--text-muted);">Monday - Saturday: 9:00 AM - 6:30 PM IST</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Location Map Visual Mock -->
+        <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 24px; text-align: center;">
+          <h4 style="color: var(--primary); margin-bottom: 12px;">Factory Visit & Sample Room</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Visitors are welcome by prior appointment to view live structural material samples and dielines.</p>
+          <div style="height: 160px; background: var(--bg-subtle); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; border: 1px dashed var(--border-color);">
+            <span style="font-weight: 700; color: var(--primary);">🗺️ Mumbai MIDC Industrial Zone Map</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ Accordion Section -->
+  <section class="section" style="background: var(--bg-surface);">
+    <div class="section-header">
+      <span class="section-subtitle">Need Help?</span>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What is the Minimum Order Quantity (MOQ) for custom boxes?</span>
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          Our MOQ starts as low as 50 units for luxury rigid gift boxes and 100 units for corrugated shipping mailer boxes. Bulk orders over 1,000 units qualify for volume price tier reductions up to 35%.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Can I get a sample box before committing to a full production run?</span>
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          Yes! We offer unprinted structural CAD samples sent within 3 business days, as well as full custom-printed proof samples for final color approval.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What artwork file formats do you accept for custom printing?</span>
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          We accept Adobe Illustrator (.AI), vector PDF, EPS, or high-resolution PNG/PSD files with fonts outlined and CMYK color modes.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What is your standard production lead time?</span>
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          Standard production is completed in 8-12 business days following dieline artwork approval. Express rush production options (5-7 days) are available upon request.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>📦 PackEase</h3>
+        <p>Custom packaging solutions tailored for your business success.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="sustainability.html">Sustainability</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Support</h3>
+        <p>Email: support@packease.com</p>
+      </div>
+      <div class="footer-col">
+        <h3>Admin Portal</h3>
+        <a href="login.html" class="btn btn-secondary btn-sm">Admin Login</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 PackEase Solutions Inc.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

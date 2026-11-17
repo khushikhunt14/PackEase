@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Directory & Leads - PackEase Admin</title>
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="admin-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <span class="admin-brand-icon">📦</span>
+        <span class="admin-brand-title">PackEase</span>
+      </div>
+
+      <ul class="admin-nav">
+        <li class="admin-nav-item">
+          <a href="admin-dashboard.html">
+            <span>📊</span> <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="admin-nav-item">
+          <a href="admin-products.html">
+            <span>📦</span> <span>Product Inventory</span>
+          </a>
+        </li>
+        <li class="admin-nav-item">
+          <a href="admin-orders.html">
+            <span>📑</span> <span>Orders & Quotes</span>
+          </a>
+        </li>
+        <li class="admin-nav-item">
+          <a href="admin-customers.html" class="active">
+            <span>👥</span> <span>Customers & Leads</span>
+          </a>
+        </li>
+        <li class="admin-nav-item">
+          <a href="admin-settings.html">
+            <span>⚙️</span> <span>Settings & Reports</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <a href="index.html">
+          <span>🌐</span> <span>View Live Website</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="admin-main">
+      
+      <!-- Topbar -->
+      <header class="admin-header">
+        <div class="admin-header-title">
+          <h1>Customer Directory & Contact Inbox</h1>
+          <p>Manage corporate accounts, review quote requests, and dispatch email responses.</p>
+        </div>
+
+        <div class="admin-user-profile">
+          <button class="btn-logout" id="adminLogoutBtn">Logout</button>
+        </div>
+      </header>
+
+      <!-- Client Accounts Table -->
+      <div class="admin-card">
+        <div class="card-header-flex">
+          <h2>Active Corporate Accounts (500+)</h2>
+          <input type="text" placeholder="Search client name or email..." style="padding: 8px 14px; border: 1px solid var(--admin-border); border-radius: 8px;">
+        </div>
+
+        <div class="table-responsive">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Client Name</th>
+                <th>Company</th>
+                <th>Email / Contact</th>
+                <th>Total Orders</th>
+                <th>Lifetime Spend</th>
+                <th>Account Tier</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Ananya Roy</strong></td>
+                <td>Aura Botanicals</td>
+                <td>ananya@aurabotanicals.com<br><small style="color: var(--text-muted);">+91 98201 44556</small></td>
+                <td>12 Orders</td>
+                <td>₹5,40,000</td>
+                <td><span class="status-pill status-active">VIP Corporate</span></td>
+                <td>
+                  <button class="action-btn" onclick="showToast('Opened profile for Ananya Roy')">Profile</button>
+                  <button class="action-btn" onclick="showToast('Email draft initiated!')">Email</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Vikram Kapoor</strong></td>
+                <td>Urban Wear Retail</td>
+                <td>vikram@urbanwear.in<br><small style="color: var(--text-muted);">+91 98112 33445</small></td>
+                <td>8 Orders</td>
+                <td>₹3,20,000</td>
+                <td><span class="status-pill status-active">Regular</span></td>
+                <td>
+                  <button class="action-btn" onclick="showToast('Opened profile for Vikram Kapoor')">Profile</button>
+                  <button class="action-btn" onclick="showToast('Email draft initiated!')">Email</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Sneha Patel</strong></td>
+                <td>Gourmet Treats</td>
+                <td>sneha@gourmettreats.co<br><small style="color: var(--text-muted);">+91 97654 11223</small></td>
+                <td>5 Orders</td>
+                <td>₹1,85,000</td>
+                <td><span class="status-pill status-active">Regular</span></td>
+                <td>
+                  <button class="action-btn" onclick="showToast('Opened profile for Sneha Patel')">Profile</button>
+                  <button class="action-btn" onclick="showToast('Email draft initiated!')">Email</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Inbound Contact Form Messages Inbox -->
+      <div class="admin-card">
+        <div class="card-header-flex">
+          <h2>Recent Contact Form Inquiries</h2>
+          <span style="font-size: 0.85rem; color: var(--text-muted);">3 Unread Messages</span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div style="background: var(--admin-bg); padding: 20px; border-radius: 12px; border-left: 4px solid var(--primary);">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+              <strong>Karan Malhotra (Pure Essence Co.)</strong>
+              <small style="color: var(--text-muted);">10 mins ago</small>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-main); margin-bottom: 12px;">"Looking for 5,000 custom printed dropper bottle boxes with gold foil embossing. Please share digital dieline templates."</p>
+            <div style="display: flex; gap: 10px;">
+              <button class="action-btn" onclick="showToast('Reply template sent to Karan Malhotra!')">Reply via Email</button>
+              <button class="action-btn action-btn-danger" onclick="showToast('Message archived.')">Archive</button>
+            </div>
+          </div>
+
+          <div style="background: var(--admin-bg); padding: 20px; border-radius: 12px; border-left: 4px solid #2ec4b6;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+              <strong>Meera Joshi (Artisan Bakery)</strong>
+              <small style="color: var(--text-muted);">2 hours ago</small>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-main); margin-bottom: 12px;">"We need 1,000 biodegradable kraft paper bags with custom logo stamp by next Friday. Is express production available?"</p>
+            <div style="display: flex; gap: 10px;">
+              <button class="action-btn" onclick="showToast('Reply template sent to Meera Joshi!')">Reply via Email</button>
+              <button class="action-btn action-btn-danger" onclick="showToast('Message archived.')">Archive</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Inventory - PackEase Admin</title>
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="admin-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <span class="admin-brand-icon">📦</span>
+        <span class="admin-brand-title">PackEase</span>
+      </div>
+
+      <ul class="admin-nav">
+        <li class="admin-nav-item">
+          <a href="admin-dashboard.html">
+            <span>📊</span> <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="admin-nav-item">
+          <a href="admin-products.html" class="active">
+            <span>📦</span> <span>Product Inventory</span>
+          </a>
+        </li>
+        <li class="admin-nav-item">
+          <a href="admin-orders.html">
+            <span>📑</span> <span>Orders & Quotes</span>
+          </a>
+        </li>
+        <li class="admin-nav-item">
+          <a href="admin-customers.html">
+            <span>👥</span> <span>Customers & Leads</span>
+          </a>
+        </li>
+        <li class="admin-nav-item">
+          <a href="admin-settings.html">
+            <span>⚙️</span> <span>Settings & Reports</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <a href="index.html">
+          <span>🌐</span> <span>View Live Website</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="admin-main">
+      
+      <!-- Topbar -->
+      <header class="admin-header">
+        <div class="admin-header-title">
+          <h1>Packaging Product Catalog & Inventory</h1>
+          <p>Manage raw materials, base prices, categories, and stock availability.</p>
+        </div>
+
+        <div class="admin-user-profile">
+          <button class="btn btn-primary" data-modal-target="addProductModal">+ Add New Product</button>
+          <button class="btn-logout" id="adminLogoutBtn">Logout</button>
+        </div>
+      </header>
+
+      <!-- Search & Filters Bar -->
+      <div class="admin-card">
+        <div style="display: flex; gap: 16px; align-items: center; justify-content: space-between;">
+          <input type="text" id="tableSearchInput" placeholder="Search product name or category..." style="padding: 10px 16px; border: 1px solid var(--admin-border); border-radius: 8px; width: 320px;">
+          
+          <div style="display: flex; gap: 12px;">
+            <select style="padding: 10px 14px; border: 1px solid var(--admin-border); border-radius: 8px;">
+              <option value="">All Categories</option>
+              <option>Corrugated Boxes</option>
+              <option>Paper Bags</option>
+              <option>Cosmetic Packaging</option>
+              <option>Rigid Boxes</option>
+              <option>Flexible Pouches</option>
+              <option>Labels & Stickers</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Inventory Table -->
+      <div class="admin-card">
+        <div class="table-responsive">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Item Code</th>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Base Price</th>
+                <th>MOQ</th>
+                <th>Stock Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>#PRD-101</strong></td>
+                <td>Heavy Duty Corrugated Mailer Box</td>
+                <td>Corrugated Boxes</td>
+                <td>₹25.00 / unit</td>
+                <td>100 units</td>
+                <td><span class="status-pill status-active">In Stock (12,500)</span></td>
+                <td>
+                  <button class="action-btn">Edit</button>
+                  <button class="action-btn action-btn-danger">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>#PRD-102</strong></td>
+                <td>Twisted Handle Kraft Paper Bag</td>
+                <td>Paper Bags</td>
+                <td>₹15.00 / unit</td>
+                <td>250 units</td>
+                <td><span class="status-pill status-active">In Stock (45,000)</span></td>
+                <td>
+                  <button class="action-btn">Edit</button>
+                  <button class="action-btn action-btn-danger">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>#PRD-103</strong></td>
+                <td>Luxury Cosmetic Folding Carton</td>
+                <td>Cosmetic Packaging</td>
+                <td>₹45.00 / unit</td>
+                <td>200 units</td>
+                <td><span class="status-pill status-pending">Low Stock (800)</span></td>
+                <td>
+                  <button class="action-btn">Edit</button>
+                  <button class="action-btn action-btn-danger">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>#PRD-104</strong></td>
+                <td>Magnetic Closure Rigid Box</td>
+                <td>Rigid Boxes</td>
+                <td>₹120.00 / unit</td>
+                <td>50 units</td>
+                <td><span class="status-pill status-active">In Stock (3,200)</span></td>
+                <td>
+                  <button class="action-btn">Edit</button>
+                  <button class="action-btn action-btn-danger">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>#PRD-105</strong></td>
+                <td>Stand-Up Foil Barrier Pouch</td>
+                <td>Flexible Pouches</td>
+                <td>₹12.00 / unit</td>
+                <td>500 units</td>
+                <td><span class="status-pill status-active">In Stock (28,000)</span></td>
+                <td>
+                  <button class="action-btn">Edit</button>
+                  <button class="action-btn action-btn-danger">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>#PRD-106</strong></td>
+                <td>Custom Die-Cut Roll Labels</td>
+                <td>Labels & Stickers</td>
+                <td>₹5.00 / unit</td>
+                <td>500 units</td>
+                <td><span class="status-pill status-active">In Stock (100,000)</span></td>
+                <td>
+                  <button class="action-btn">Edit</button>
+                  <button class="action-btn action-btn-danger">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Add Product Modal Form -->
+  <div class="modal-overlay" id="addProductModal">
+    <div class="modal-box">
+      <button class="modal-close" data-modal-close>&times;</button>
+      <h2 style="font-size: 1.5rem; color: var(--primary); margin-bottom: 20px;">Add New Packaging Product</h2>
+
+      <form id="adminAddProductForm">
+        <div class="admin-form-group">
+          <label for="pName">Product Name *</label>
+          <input type="text" id="pName" placeholder="e.g. Biodegradable Courier Bag" required>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="admin-form-group">
+            <label for="pCategory">Category *</label>
+            <select id="pCategory" required>
+              <option value="">Select Category</option>
+              <option>Corrugated Boxes</option>
+              <option>Paper Bags</option>
+              <option>Cosmetic Packaging</option>
+              <option>Rigid Boxes</option>
+              <option>Flexible Pouches</option>
+              <option>Labels & Stickers</option>
+            </select>
+          </div>
+          <div class="admin-form-group">
+            <label for="pPrice">Base Price per Unit (₹) *</label>
+            <input type="number" id="pPrice" placeholder="35" min="1" step="0.5" required>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="admin-form-group">
+            <label for="pMoq">Minimum Order Quantity (MOQ)</label>
+            <input type="number" id="pMoq" placeholder="100" min="10">
+          </div>
+          <div class="admin-form-group">
+            <label for="pStock">Initial Inventory Qty</label>
+            <input type="number" id="pStock" placeholder="5000">
+          </div>
+        </div>
+
+        <div class="admin-form-group">
+          <label for="pDesc">Detailed Specifications & Description</label>
+          <textarea id="pDesc" rows="4" placeholder="Enter paper GSM, flute thickness, or eco certifications..."></textarea>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px;">
+          <button type="button" class="btn btn-secondary" data-modal-close>Cancel</button>
+          <button type="submit" class="btn btn-primary">Save & Publish Product</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

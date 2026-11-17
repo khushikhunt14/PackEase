@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sustainability - PackEase</title>
+  <meta name="description" content="Discover PackEase's commitment to 100% recyclable, biodegradable materials and eco-friendly packaging processes.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .eco-calc-card {
+      background: var(--bg-surface);
+      border: 2px dashed var(--accent);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      margin: 40px auto;
+      max-width: 800px;
+      box-shadow: var(--shadow-md);
+    }
+    .eco-stat-val {
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <span>📦</span> PackEase <span class="badge">Eco-Pack</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="sustainability.html" class="active">Sustainability</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <button id="themeBtn" aria-label="Toggle Theme">🌙</button>
+      <a href="contact.html" class="btn btn-primary btn-sm">Get a Quote</a>
+      <a href="login.html" class="btn btn-secondary btn-sm">Admin Portal</a>
+    </div>
+  </header>
+
+  <!-- Hero Header -->
+  <section class="section" style="background: linear-gradient(135deg, #e6f4f0 0%, var(--bg-surface) 100%);">
+    <div class="section-header" style="max-width: 800px;">
+      <span class="section-subtitle">Planet First Packaging</span>
+      <h2>Our Zero-Plastic & Carbon Reduction Commitments</h2>
+      <p>At PackEase, sustainability is not an afterthought—it is the foundational core of how we engineer every single box, bag, and pouch.</p>
+    </div>
+  </section>
+
+  <!-- Sustainability Features Grid -->
+  <section class="section">
+    <div class="features-grid">
+      <div class="feature-box">
+        <div class="feature-icon">🌳</div>
+        <h3>100% FSC-Certified Paper</h3>
+        <p>All virgin and recycled fibers originate strictly from responsibly managed forests certified by the Forest Stewardship Council.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="feature-icon">🌱</div>
+        <h3>Organic Soy & Water Inks</h3>
+        <p>We replace harmful petroleum inks with non-toxic soy-based and water-soluble pigment inks for rich print quality without toxic runoff.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="feature-icon">🔄</div>
+        <h3>Circular Biodegradability</h3>
+        <p>Our corrugated boxes and kraft bags break down naturally in soil within 90 days without releasing microplastic residue.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="feature-icon">⚡</div>
+        <h3>Solar-Powered Production</h3>
+        <p>Over 60% of electricity utilized in our primary manufacturing facilities is generated via rooftop solar panels.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Eco Savings Impact Calculator -->
+  <section class="section" style="background: var(--bg-subtle);">
+    <div class="section-header">
+      <span class="section-subtitle">Impact Estimator</span>
+      <h2>Calculate Your Carbon Footprint Reduction</h2>
+      <p>See how switching from conventional plastic to PackEase eco-kraft packaging reduces environmental impact.</p>
+    </div>
+
+    <div class="eco-calc-card">
+      <div class="form-group" style="margin-bottom: 24px;">
+        <label for="ecoMonthlyUnits">Your Estimated Monthly Packaging Usage (Units)</label>
+        <input type="number" id="ecoMonthlyUnits" value="5000" min="100" step="500">
+      </div>
+
+      <div class="grid-3" style="margin-top: 30px; text-align: center;">
+        <div class="stat-card">
+          <div class="eco-stat-val" id="co2Saved">1.25 Tons</div>
+          <p>CO₂ Emissions Prevented</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="eco-stat-val" id="treesSaved">35 Trees</div>
+          <p>Equivalent Trees Preserved</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="eco-stat-val" id="plasticDiverted">150 Kg</div>
+          <p>Single-use Plastic Diverted</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Grid -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-subtitle">Verified Compliance</span>
+      <h2>Recognized Global Eco Certifications</h2>
+    </div>
+
+    <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); text-align: center;">
+      <div class="testimonial-card">
+        <div style="font-size: 3rem; margin-bottom: 12px;">📜</div>
+        <h3>FSC Chain-of-Custody</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Guarantees raw materials come from sustainably managed forests.</p>
+      </div>
+
+      <div class="testimonial-card">
+        <div style="font-size: 3rem; margin-bottom: 12px;">🌿</div>
+        <h3>ISO 14001 Certified</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Adherence to strict international environmental management standards.</p>
+      </div>
+
+      <div class="testimonial-card">
+        <div style="font-size: 3rem; margin-bottom: 12px;">♻️</div>
+        <h3>OK Biobased 4-Star</h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Certified renewable carbon content for paper and barrier films.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>📦 PackEase</h3>
+        <p>Pioneering sustainable custom packaging for a cleaner planet.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Pages</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="sustainability.html">Sustainability</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p>support@packease.com</p>
+      </div>
+      <div class="footer-col">
+        <h3>Admin</h3>
+        <a href="login.html" class="btn btn-secondary btn-sm">Admin Portal</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 PackEase Solutions Inc.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // Interactive Eco Savings Calculator Logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const unitsInput = document.getElementById('ecoMonthlyUnits');
+      const co2Saved = document.getElementById('co2Saved');
+      const treesSaved = document.getElementById('treesSaved');
+      const plasticDiverted = document.getElementById('plasticDiverted');
+
+      function updateEcoStats() {
+        if (!unitsInput) return;
+        const qty = parseInt(unitsInput.value) || 1000;
+        
+        const co2Tons = (qty * 0.00025).toFixed(2);
+        const trees = Math.round(qty * 0.007);
+        const plasticKg = Math.round(qty * 0.03);
+
+        co2Saved.textContent = `${co2Tons} Tons`;
+        treesSaved.textContent = `${trees} Trees`;
+        plasticDiverted.textContent = `${plasticKg} Kg`;
+      }
+
+      if (unitsInput) {
+        unitsInput.addEventListener('input', updateEcoStats);
+        updateEcoStats();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Packaging Catalog - PackEase</title>
+  <meta name="description" content="Explore custom corrugated boxes, paper bags, cosmetic packaging, rigid gift boxes, flexible pouches, and branded labels.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <span>📦</span> PackEase <span class="badge">Eco-Pack</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="sustainability.html">Sustainability</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <button id="themeBtn" aria-label="Toggle Theme">🌙</button>
+      <a href="contact.html" class="btn btn-primary btn-sm">Get a Quote</a>
+      <a href="login.html" class="btn btn-secondary btn-sm">Admin Portal</a>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="section" style="background: linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-subtle) 100%); padding: 60px 5%;">
+    <div class="section-header">
+      <span class="section-subtitle">Catalog Overview</span>
+      <h2>Our Packaging Products</h2>
+      <p>Browse our complete range of eco-friendly, customizable packaging solutions for shipping, retail, luxury gifts, and cosmetics.</p>
+    </div>
+
+    <!-- Search & Filter Controls -->
+    <div class="filter-tabs">
+      <button class="tab-btn active" data-filter="all">All Categories</button>
+      <button class="tab-btn" data-filter="corrugated">Corrugated Boxes</button>
+      <button class="tab-btn" data-filter="paperbag">Paper Bags</button>
+      <button class="tab-btn" data-filter="cosmetic">Cosmetic Boxes</button>
+      <button class="tab-btn" data-filter="rigid">Rigid Gift Boxes</button>
+      <button class="tab-btn" data-filter="flexible">Flexible Pouches</button>
+      <button class="tab-btn" data-filter="labels">Labels & Stickers</button>
+    </div>
+  </section>
+
+  <!-- Products Grid -->
+  <section class="section">
+    <div class="grid-3" id="productsGrid">
+      
+      <!-- Product 1 -->
+      <div class="product-card" data-category="corrugated">
+        <div class="product-thumb">
+          <img src="corrugated.png" alt="Corrugated Box">
+          <span class="tag-badge">Shipping</span>
+          <span class="eco-badge">100% Recyclable</span>
+        </div>
+        <div class="product-info">
+          <h3>Heavy Duty Corrugated Mailer Box</h3>
+          <p>Ideal for e-commerce shipping. Features 3-ply flute protection, custom flexographic exterior printing, and dust flaps.</p>
+          <div class="product-meta">
+            <div class="product-price">
+              <span class="price-val">₹25 <small>/ unit</small></span>
+              <span class="moq-label">MOQ: 100 units</span>
+            </div>
+            <a href="product-detail.html?type=corrugated" class="btn btn-primary btn-sm">Configure & Order</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card" data-category="paperbag">
+        <div class="product-thumb">
+          <img src="paperbag.png" alt="Paper Bag">
+          <span class="tag-badge">Retail</span>
+          <span class="eco-badge">Kraft Fibre</span>
+        </div>
+        <div class="product-info">
+          <h3>Twisted Handle Kraft Paper Bag</h3>
+          <p>Sturdy 120 GSM recycled brown kraft paper bag with reinforced handles for retail clothing, books, and bakery goods.</p>
+          <div class="product-meta">
+            <div class="product-price">
+              <span class="price-val">₹15 <small>/ unit</small></span>
+              <span class="moq-label">MOQ: 250 units</span>
+            </div>
+            <a href="product-detail.html?type=paperbag" class="btn btn-primary btn-sm">Configure & Order</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card" data-category="cosmetic">
+        <div class="product-thumb">
+          <img src="cosmetic.png" alt="Cosmetic Packaging">
+          <span class="tag-badge">Skincare</span>
+          <span class="eco-badge">FSC Certified</span>
+        </div>
+        <div class="product-info">
+          <h3>Luxury Cosmetic Folding Carton</h3>
+          <p>Foil-stamped 350 GSM SBS board with inner locking tabs designed for serum bottles, creams, and perfume bottles.</p>
+          <div class="product-meta">
+            <div class="product-price">
+              <span class="price-val">₹45 <small>/ unit</small></span>
+              <span class="moq-label">MOQ: 200 units</span>
+            </div>
+            <a href="product-detail.html?type=cosmetic" class="btn btn-primary btn-sm">Configure & Order</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card" data-category="rigid">
+        <div class="product-thumb">
+          <img src="rigid.png" alt="Rigid Box">
+          <span class="tag-badge">Jewelry & Tech</span>
+          <span class="eco-badge">Reusable</span>
+        </div>
+        <div class="product-info">
+          <h3>Magnetic Closure Rigid Box</h3>
+          <p>Premium 1200 GSM grayboard covered in specialty textured paper with hidden neodymium magnetic clasp.</p>
+          <div class="product-meta">
+            <div class="product-price">
+              <span class="price-val">₹120 <small>/ unit</small></span>
+              <span class="moq-label">MOQ: 50 units</span>
+            </div>
+            <a href="product-detail.html?type=rigid" class="btn btn-primary btn-sm">Configure & Order</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product-card" data-category="flexible">
+        <div class="product-thumb">
+          <img src="flexible.png" alt="Flexible Pouch">
+          <span class="tag-badge">Gourmet Food</span>
+          <span class="eco-badge">Ziplock Barrier</span>
+        </div>
+        <div class="product-info">
+          <h3>Stand-Up Foil Barrier Pouch</h3>
+          <p>Resealable food-grade pouch with high oxygen and moisture barrier for coffee beans, spices, and dried fruits.</p>
+          <div class="product-meta">
+            <div class="product-price">
+              <span class="price-val">₹12 <small>/ unit</small></span>
+              <span class="moq-label">MOQ: 500 units</span>
+            </div>
+            <a href="product-detail.html?type=flexible" class="btn btn-primary btn-sm">Configure & Order</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="product-card" data-category="labels">
+        <div class="product-thumb">
+          <img src="labels.png" alt="Custom Stickers">
+          <span class="tag-badge">Stickers</span>
+          <span class="eco-badge">Waterproof Roll</span>
+        </div>
+        <div class="product-info">
+          <h3>Custom Die-Cut Roll Labels</h3>
+          <p>High-tack adhesive roll labels printed in full CMYK color with matte or gloss lamination for bottles and jars.</p>
+          <div class="product-meta">
+            <div class="product-price">
+              <span class="price-val">₹5 <small>/ unit</small></span>
+              <span class="moq-label">MOQ: 500 units</span>
+            </div>
+            <a href="product-detail.html?type=labels" class="btn btn-primary btn-sm">Configure & Order</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Spec Request Banner -->
+  <section class="section" style="background: var(--bg-subtle);">
+    <div class="quote-widget" style="grid-template-columns: 2fr 1fr;">
+      <div>
+        <h3 style="font-size: 1.8rem; margin-bottom: 12px; color: var(--primary);">Need Custom Dimensions or Structural Testing?</h3>
+        <p style="color: var(--text-muted);">Our CAD packaging engineers create custom dielines and physical unprinted prototypes within 48 hours for your exact product samples.</p>
+      </div>
+      <div style="text-align: right;">
+        <a href="contact.html" class="btn btn-primary">Request Custom Dieline</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>📦 PackEase</h3>
+        <p>Your one-stop destination for eco-friendly custom packaging solutions.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Catalog Categories</h3>
+        <ul>
+          <li><a href="products.html">Corrugated Mailers</a></li>
+          <li><a href="products.html">Kraft Paper Bags</a></li>
+          <li><a href="products.html">Cosmetic Folding Cartons</a></li>
+          <li><a href="products.html">Rigid Gift Boxes</a></li>
+          <li><a href="products.html">Stand-Up Pouches</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Help</h3>
+        <ul>
+          <li><a href="contact.html">FAQ & Support</a></li>
+          <li><a href="sustainability.html">Eco Materials</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Admin Access</h3>
+        <a href="login.html" class="btn btn-secondary btn-sm">Admin Portal</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 PackEase Solutions Inc. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

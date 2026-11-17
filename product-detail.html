@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Configurator & Detail - PackEase</title>
+  <meta name="description" content="Customize packaging size, material, coating, print finish, and quantity for instant bulk pricing.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .config-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 50px;
+      align-items: start;
+    }
+    .gallery-preview {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .gallery-preview img {
+      max-width: 100%;
+      height: 380px;
+      object-fit: contain;
+      border-radius: var(--radius-md);
+    }
+    .config-panel {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+    }
+    .size-inputs {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+    }
+    .price-breakdown-card {
+      background: var(--primary-subtle);
+      border: 2px dashed var(--primary);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .config-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <span>📦</span> PackEase <span class="badge">Eco-Pack</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="sustainability.html">Sustainability</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <button id="themeBtn" aria-label="Toggle Theme">🌙</button>
+      <a href="contact.html" class="btn btn-primary btn-sm">Get a Quote</a>
+      <a href="login.html" class="btn btn-secondary btn-sm">Admin Portal</a>
+    </div>
+  </header>
+
+  <!-- Product Customizer Section -->
+  <section class="section">
+    <div class="config-grid">
+      
+      <!-- Left: Image Preview & Highlights -->
+      <div class="gallery-preview">
+        <img id="detailImg" src="corrugated.png" alt="Packaging Box Preview">
+        <h3 id="detailTitle" style="font-size: 1.6rem; margin: 20px 0 10px 0;">Custom Corrugated Mailer Box</h3>
+        <p id="detailDesc" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px;">Heavy-duty 3-ply corrugated fibers engineered to protect electronics, apparel, and cosmetics during long-distance transit.</p>
+        
+        <div style="text-align: left; background: var(--bg-main); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <strong style="display: block; margin-bottom: 10px; color: var(--primary);">Specifications & Inclusions:</strong>
+          <ul style="line-height: 1.8; font-size: 0.85rem; color: var(--text-muted); list-style-position: inside;">
+            <li>✔️ 100% Recyclable FSC-Certified Kraft Fibers</li>
+            <li>✔️ Custom Exterior & Interior CMYK Color Printing</li>
+            <li>✔️ Scratch-resistant Matte or Gloss Protective Laminate</li>
+            <li>✔️ Free Digital Dieline Proof Provided Prior to Production</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right: Interactive Configurator Controls -->
+      <div class="config-panel">
+        <h2 style="font-size: 1.8rem; margin-bottom: 24px; color: var(--primary);">Configure Specifications</h2>
+        
+        <form id="configForm">
+          
+          <!-- Box Type Selector -->
+          <div class="form-group" style="margin-bottom: 20px;">
+            <label for="detailBoxType">Select Packaging Model</label>
+            <select id="detailBoxType">
+              <option value="corrugated" selected>Corrugated Shipping Box</option>
+              <option value="paperbag">Eco Kraft Paper Bag</option>
+              <option value="cosmetic">Cosmetic Folding Carton</option>
+              <option value="rigid">Luxury Magnetic Rigid Box</option>
+              <option value="flexible">Stand-Up Barrier Pouch</option>
+              <option value="labels">Custom Roll Labels</option>
+            </select>
+          </div>
+
+          <!-- Dimensions Input -->
+          <div class="form-group" style="margin-bottom: 20px;">
+            <label>Dimensions (Length × Width × Height in cm)</label>
+            <div class="size-inputs">
+              <input type="number" id="dimL" value="25" placeholder="L (cm)" min="5" required>
+              <input type="number" id="dimW" value="18" placeholder="W (cm)" min="5" required>
+              <input type="number" id="dimH" value="10" placeholder="H (cm)" min="5" required>
+            </div>
+          </div>
+
+          <!-- Material Selection -->
+          <div class="form-group" style="margin-bottom: 20px;">
+            <label for="detailMaterial">Material & Finish Type</label>
+            <select id="detailMaterial">
+              <option value="standard">Standard Matte White Cardstock</option>
+              <option value="kraft">Eco Brown Natural Kraft Paper</option>
+              <option value="recycled">100% Post-Consumer Recycled Board</option>
+              <option value="luxury">Soft-Touch Velvet with Gold Foil Stamping</option>
+            </select>
+          </div>
+
+          <!-- Quantity Tier Input -->
+          <div class="form-group" style="margin-bottom: 20px;">
+            <label for="detailQty">Production Quantity (Units)</label>
+            <input type="number" id="detailQty" value="500" min="50" step="50" required>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Bulks >= 1,000 units qualify for volume price tier reductions.</span>
+          </div>
+
+          <!-- Price Display -->
+          <div class="price-breakdown-card">
+            <div>
+              <span style="font-size: 0.85rem; color: var(--text-muted); display: block;">Estimated Total</span>
+              <strong id="detailTotal" style="font-size: 2.2rem; color: var(--primary);">₹12,500</strong>
+            </div>
+            <div style="text-align: right;">
+              <span id="detailUnit" style="font-size: 0.9rem; font-weight: 700; color: var(--text-main);">₹25.00 / unit</span>
+              <span style="display: block; font-size: 0.75rem; color: var(--text-muted);">Incl. GST & Standard Shipping</span>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 16px; margin-top: 24px;">
+            <button type="submit" class="btn btn-primary" style="flex: 1;">Submit Custom Quote Order</button>
+            <a href="contact.html" class="btn btn-secondary">Request Physical Sample</a>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>📦 PackEase</h3>
+        <p>Custom packaging engineered for modern brands.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Catalog</h3>
+        <ul>
+          <li><a href="products.html">All Products</a></li>
+          <li><a href="sustainability.html">Sustainability</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Support</h3>
+        <p>Email: support@packease.com</p>
+      </div>
+      <div class="footer-col">
+        <h3>Admin</h3>
+        <a href="login.html" class="btn btn-secondary btn-sm">Admin Portal</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 PackEase Solutions Inc.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // Product Configurator URL Parameter & Price Sync
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const type = urlParams.get('type');
+      const boxSelect = document.getElementById('detailBoxType');
+      
+      if (type && boxSelect) {
+        boxSelect.value = type;
+        updateProductView(type);
+      }
+
+      boxSelect.addEventListener('change', (e) => {
+        updateProductView(e.target.value);
+      });
+
+      function updateProductView(selectedType) {
+        const detailImg = document.getElementById('detailImg');
+        const detailTitle = document.getElementById('detailTitle');
+        const detailDesc = document.getElementById('detailDesc');
+
+        const productDetails = {
+          'corrugated': {
+            img: 'corrugated.png',
+            title: 'Custom Corrugated Mailer Box',
+            desc: 'Heavy-duty 3-ply corrugated fibers engineered to protect electronics, apparel, and cosmetics during transit.'
+          },
+          'paperbag': {
+            img: 'paperbag.png',
+            title: 'Eco Kraft Paper Bag',
+            desc: '100% Recyclable twisted-handle kraft bags crafted for eco-conscious retail stores and boutique outlets.'
+          },
+          'cosmetic': {
+            img: 'cosmetic.png',
+            title: 'Luxury Cosmetic Packaging Box',
+            desc: 'High-definition printed SBS carton with gold foil embossing, engineered for premium beauty products.'
+          },
+          'rigid': {
+            img: 'rigid.png',
+            title: 'Magnetic Closure Rigid Gift Box',
+            desc: 'Ultra-sturdy 1200 GSM grayboard presentation box with magnetic flip-top closure and custom foam inserts.'
+          },
+          'flexible': {
+            img: 'flexible.png',
+            title: 'Stand-Up Barrier Pouch',
+            desc: 'Resealable ziplock barrier pouch crafted for food safety, preserving aroma and moisture protection.'
+          },
+          'labels': {
+            img: 'labels.png',
+            title: 'Custom Roll Labels & Stickers',
+            desc: 'Vibrant CMYK die-cut vinyl and paper labels provided on rolls for automated container application.'
+          }
+        };
+
+        const item = productDetails[selectedType] || productDetails['corrugated'];
+        detailImg.src = item.img;
+        detailTitle.textContent = item.title;
+        detailDesc.textContent = item.desc;
+      }
+
+      // Calculation sync
+      const qtyInput = document.getElementById('detailQty');
+      const matInput = document.getElementById('detailMaterial');
+      const detailTotal = document.getElementById('detailTotal');
+      const detailUnit = document.getElementById('detailUnit');
+
+      function recalcDetail() {
+        const selType = boxSelect.value;
+        const qty = parseInt(qtyInput.value) || 500;
+        const mat = matInput.value;
+
+        const basePrices = { corrugated: 25, paperbag: 15, cosmetic: 45, rigid: 120, flexible: 12, labels: 5 };
+        const mults = { standard: 1.0, kraft: 1.1, recycled: 1.25, luxury: 1.5 };
+
+        let unit = (basePrices[selType] || 20) * (mults[mat] || 1.0);
+        if (qty >= 2500) unit *= 0.7;
+        else if (qty >= 1000) unit *= 0.85;
+
+        const total = (unit * qty).toLocaleString('en-IN');
+        detailTotal.textContent = `₹${total}`;
+        detailUnit.textContent = `₹${unit.toFixed(2)} / unit`;
+      }
+
+      boxSelect.addEventListener('change', recalcDetail);
+      qtyInput.addEventListener('input', recalcDetail);
+      matInput.addEventListener('change', recalcDetail);
+      recalcDetail();
+
+      const configForm = document.getElementById('configForm');
+      configForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        showToast('Your custom quote config has been submitted! Our team will send digital dieline proofs shortly.');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings & Reports - PackEase Admin</title>
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="admin-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <span class="admin-brand-icon">📦</span>
+        <span class="admin-brand-title">PackEase</span>
+      </div>
+
+      <ul class="admin-nav">
+        <li class="admin-nav-item">
+          <a href="admin-dashboard.html">
+            <span>📊</span> <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="admin-nav-item">
+          <a href="admin-products.html">
+            <span>📦</span> <span>Product Inventory</span>
+          </a>
+        </li>
+        <li class="admin-nav-item">
+          <a href="admin-orders.html">
+            <span>📑</span> <span>Orders & Quotes</span>
+          </a>
+        </li>
+        <li class="admin-nav-item">
+          <a href="admin-customers.html">
+            <span>👥</span> <span>Customers & Leads</span>
+          </a>
+        </li>
+        <li class="admin-nav-item">
+          <a href="admin-settings.html" class="active">
+            <span>⚙️</span> <span>Settings & Reports</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <a href="index.html">
+          <span>🌐</span> <span>View Live Website</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="admin-main">
+      
+      <!-- Topbar -->
+      <header class="admin-header">
+        <div class="admin-header-title">
+          <h1>System Settings & Analytics Reports</h1>
+          <p>Configure pricing rules, business profile parameters, and export financial summaries.</p>
+        </div>
+
+        <div class="admin-user-profile">
+          <button class="btn-logout" id="adminLogoutBtn">Logout</button>
+        </div>
+      </header>
+
+      <!-- Grid Layout -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+        
+        <!-- Company Profile & Pricing Matrix Form -->
+        <div class="admin-card">
+          <h2>Business Profile Settings</h2>
+          <form id="settingsForm" onsubmit="event.preventDefault(); showToast('System settings updated successfully!');">
+            <div class="admin-form-group">
+              <label for="companyTitle">Store / Business Name</label>
+              <input type="text" id="companyTitle" value="PackEase Solutions Inc.">
+            </div>
+
+            <div class="admin-form-group">
+              <label for="supportEmail">Primary Support Email</label>
+              <input type="email" id="supportEmail" value="support@packease.com">
+            </div>
+
+            <div class="admin-form-group">
+              <label for="gstNumber">GSTIN / Tax ID Registration</label>
+              <input type="text" id="gstNumber" value="27AAAAA0000A1Z5">
+            </div>
+
+            <div class="admin-form-group">
+              <label for="bulkDiscountRule">Bulk Order Discount Threshold (% for >= 2500 units)</label>
+              <input type="number" id="bulkDiscountRule" value="35" min="5" max="50">
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Save General Settings</button>
+          </form>
+        </div>
+
+        <!-- Exportable Analytics Reports -->
+        <div class="admin-card">
+          <h2>Export System Reports</h2>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 24px;">Generate structured PDF or Excel reports for audit, tax filing, and inventory checks.</p>
+
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px; background: var(--admin-bg); border-radius: 10px;">
+              <div>
+                <strong>Monthly Sales & Revenue Report (August 2026)</strong>
+                <span style="display: block; font-size: 0.75rem; color: var(--text-muted);">Contains GST breakdowns and total volume shipped.</span>
+              </div>
+              <button class="action-btn" onclick="showToast('Downloading Sales Report PDF...')">Download PDF</button>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px; background: var(--admin-bg); border-radius: 10px;">
+              <div>
+                <strong>Material & Stock Inventory Audit</strong>
+                <span style="display: block; font-size: 0.75rem; color: var(--text-muted);">Current GSM stock levels and supplier reorder points.</span>
+              </div>
+              <button class="action-btn" onclick="showToast('Downloading Inventory CSV...')">Download CSV</button>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px; background: var(--admin-bg); border-radius: 10px;">
+              <div>
+                <strong>FSC Sustainability Carbon Reduction Report</strong>
+                <span style="display: block; font-size: 0.75rem; color: var(--text-muted);">Certifies environmental savings for corporate accounts.</span>
+              </div>
+              <button class="action-btn" onclick="showToast('Downloading Eco Impact Summary...')">Download PDF</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
